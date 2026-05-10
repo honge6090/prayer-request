@@ -8,8 +8,8 @@ export const copy = {
       "Please join us as we pray for our whole church, including you.",
     body: "Prayer carries weight. It changes the things we ask for, and it changes us. When we lift one another up, we share the load and we get to see God move in the small and large parts of our lives.",
     verse:
-      "“Therefore confess your sins to each other and pray for each other so that you may be healed. The prayer of a righteous person is powerful and effective.”",
-    verseRef: "James 5:16",
+      "“And they devoted themselves to the apostles’ teaching and the fellowship, to the breaking of bread and the prayers.”",
+    verseRef: "Acts 2:42",
     cta: "Continue",
   },
 
@@ -34,8 +34,8 @@ export const copy = {
       "Please join us as we pray for our whole church, including you.",
     body: "Prayer carries weight. It changes the things we ask for, and it changes us. When we lift one another up, we share the load and we get to see God move in the small and large parts of our lives.",
     verse:
-      "“Therefore confess your sins to each other and pray for each other so that you may be healed. The prayer of a righteous person is powerful and effective.”",
-    verseRef: "James 5:16",
+      "“And they devoted themselves to the apostles’ teaching and the fellowship, to the breaking of bread and the prayers.”",
+    verseRef: "Acts 2:42",
     scan: "Scan to share a prayer request",
   },
 };
