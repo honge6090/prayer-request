@@ -48,8 +48,27 @@ select {
 }
 
 input,
+textarea,
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
 textarea {
   font-size: 1.0625rem;
+  -webkit-text-fill-color: var(--color-foreground);
+}
+
+input.calm,
+textarea.calm {
+  box-shadow: none;
+}
+
+input.calm:focus,
+textarea.calm:focus {
+  box-shadow: 0 0 0 3px rgba(122, 138, 108, 0.12);
 }
 
 ::selection {

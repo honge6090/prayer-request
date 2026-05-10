@@ -15,7 +15,7 @@ export const copy = {
 
   name: {
     heading: "What is your name?",
-    placeholder: "First name is fine",
+    placeholder: "Full Name",
     body: "We would love to pray for you by name.",
     back: "Back",
     cta: "Submit",
