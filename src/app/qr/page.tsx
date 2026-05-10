@@ -21,7 +21,7 @@ export default async function QrPage() {
   const qrSvg = await QRCode.toString(target, {
     type: "svg",
     margin: 1,
-    width: 360,
+    width: 480,
     color: {
       dark: "#2d2a26",
       light: "#00000000",
@@ -30,47 +30,52 @@ export default async function QrPage() {
   });
 
   return (
-    <main className="flex flex-1 items-start justify-center px-6 py-10 sm:py-16">
-      <div className="w-full max-w-md flex flex-col items-center text-center">
-        <p className="font-body text-[0.78rem] uppercase tracking-[0.32em] text-[var(--color-subtle)] anim-fade">
-          Prayer Wall
-        </p>
-        <div className="divider mt-5 anim-fade delay-1" />
-
-        <h1 className="font-display text-[3.6rem] leading-[1.05] sm:text-[4.4rem] mt-8 anim-fade-up delay-1 text-[var(--color-foreground)]">
-          {copy.qr.heading}
-        </h1>
-
-        <div
-          className="mt-10 rounded-[6px] border border-[var(--color-line)] bg-[var(--color-paper)] p-6 anim-fade-up delay-2"
-          aria-label="QR code that opens the prayer request site"
-          dangerouslySetInnerHTML={{ __html: qrSvg }}
-        />
-
-        <p className="mt-5 font-body text-[0.78rem] uppercase tracking-[0.28em] text-[var(--color-subtle)] anim-fade-up delay-2">
-          {copy.qr.scan}
-        </p>
-        <p className="mt-2 font-body text-sm text-[var(--color-muted)] break-all anim-fade-up delay-2">
-          {target}
-        </p>
-
-        <div className="mt-12 max-w-sm space-y-4 anim-fade-up delay-3">
-          <p className="text-[var(--color-foreground)] italic font-body">
-            {copy.qr.intro}
+    <main className="flex flex-1 items-center justify-center px-6 py-8 lg:px-12 lg:py-10">
+      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
+        <section className="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <p className="font-body text-[0.78rem] uppercase tracking-[0.32em] text-[var(--color-subtle)] anim-fade">
+            Prayer Wall
           </p>
-          <p className="text-[var(--color-muted)] font-body">{copy.qr.body}</p>
-        </div>
+          <div className="mt-5 h-px w-14 bg-[var(--color-line)] anim-fade delay-1" />
 
-        <div className="divider mt-12 anim-fade delay-4" />
+          <h1 className="font-display text-[4.4rem] leading-[1.02] sm:text-[5.6rem] lg:text-[6.6rem] mt-7 anim-fade-up delay-1 text-[var(--color-foreground)]">
+            {copy.qr.heading}
+          </h1>
 
-        <figure className="mt-8 max-w-sm space-y-3 anim-fade delay-4">
-          <blockquote className="font-body italic text-[var(--color-foreground)] leading-relaxed">
-            {copy.qr.verse}
-          </blockquote>
-          <figcaption className="font-body text-[0.78rem] uppercase tracking-[0.28em] text-[var(--color-subtle)]">
-            {copy.qr.verseRef}
-          </figcaption>
-        </figure>
+          <div className="mt-8 max-w-xl space-y-4 anim-fade-up delay-2">
+            <p className="text-lg lg:text-xl text-[var(--color-foreground)] italic font-body leading-relaxed">
+              {copy.qr.intro}
+            </p>
+            <p className="text-base lg:text-lg text-[var(--color-muted)] font-body leading-relaxed">
+              {copy.qr.body}
+            </p>
+          </div>
+
+          <div className="mt-8 h-px w-14 bg-[var(--color-line)] anim-fade delay-3" />
+
+          <figure className="mt-6 max-w-xl space-y-3 anim-fade delay-3">
+            <blockquote className="font-body italic text-[var(--color-foreground)] leading-relaxed text-base lg:text-lg">
+              {copy.qr.verse}
+            </blockquote>
+            <figcaption className="font-body text-[0.78rem] uppercase tracking-[0.28em] text-[var(--color-subtle)]">
+              {copy.qr.verseRef}
+            </figcaption>
+          </figure>
+        </section>
+
+        <aside className="flex flex-col items-center anim-fade-up delay-2">
+          <div
+            className="rounded-[8px] border border-[var(--color-line)] bg-[var(--color-paper)] p-6 lg:p-8 w-full max-w-[520px]"
+            aria-label="QR code that opens the prayer request site"
+            dangerouslySetInnerHTML={{ __html: qrSvg }}
+          />
+          <p className="mt-5 font-body text-[0.78rem] uppercase tracking-[0.28em] text-[var(--color-subtle)] text-center">
+            {copy.qr.scan}
+          </p>
+          <p className="mt-2 font-body text-sm text-[var(--color-muted)] break-all text-center">
+            {target}
+          </p>
+        </aside>
       </div>
     </main>
   );
