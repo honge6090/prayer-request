@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #faf7f0;
+  --color-paper: #fffdf8;
+  --color-foreground: #2d2a26;
+  --color-muted: #807a72;
+  --color-subtle: #b9b1a4;
+  --color-accent: #7a8a6c;
+  --color-accent-deep: #5e6b51;
+  --color-line: rgba(45, 42, 38, 0.1);
+
+  --font-display: var(--font-display), "Brush Script MT", cursive;
+  --font-body: var(--font-body), "Cormorant Garamond", Georgia, "Times New Roman",
+    serif;
+}
+
+html,
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-size: 1.0625rem;
+}
+
+::selection {
+  background: rgba(122, 138, 108, 0.25);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-fade-up {
+  animation: fadeUp 0.55s ease-out both;
+}
+
+.anim-fade {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.delay-1 {
+  animation-delay: 0.05s;
+}
+.delay-2 {
+  animation-delay: 0.15s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.45s;
+}
+
+input.calm,
+textarea.calm {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  color: var(--color-foreground);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.calm:focus,
+textarea.calm:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(122, 138, 108, 0.12);
+}
+
+button.calm {
+  background: var(--color-foreground);
+  color: var(--color-paper);
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 2rem;
+  font-size: 1.0625rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button.calm:hover:not(:disabled) {
+  background: #1f1c19;
+}
+
+button.calm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.calm-ghost {
+  background: transparent;
+  color: var(--color-muted);
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+button.calm-ghost:hover:not(:disabled) {
+  color: var(--color-foreground);
+}
+
+.divider {
+  width: 56px;
+  height: 1px;
+  background: var(--color-line);
+  margin: 0 auto;
+}
